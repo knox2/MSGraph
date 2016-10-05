@@ -1,10 +1,10 @@
 {
-    "name": "socialiteproviders/microsoft-azure",
-    "description": "Microsoft Azure OAuth2 Provider for Laravel Socialite",
+    "name": "knox2/microsoft-graph",
+    "description": "Microsoft Graph Provider for Laravel Socialite",
     "license": "MIT",
     "authors": [{
-        "name": "Chris Hemmings",
-        "email": "chris@hemmin.gs"
+        "name": "Timothy Radier",
+        "email": "timothyradier@gmail.com"
     }],
     "require": {
         "php": "^5.6 || ^7.0",
@@ -12,7 +12,7 @@
     },
     "autoload": {
         "psr-4": {
-            "SocialiteProviders\\Azure\\": "src/"
+            "Knox2\\MSGraph\\": "src/"
         }
     }
 }

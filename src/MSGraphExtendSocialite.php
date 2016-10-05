@@ -1,10 +1,10 @@
 <?php
 
-namespace SocialiteProviders\Azure;
+namespace Knox2\MSGraph;
 
 use SocialiteProviders\Manager\SocialiteWasCalled;
 
-class AzureExtendSocialite
+class MSGraphExtendSocialite
 {
     /**
      * Execute the provider.
@@ -12,7 +12,7 @@ class AzureExtendSocialite
     public function handle(SocialiteWasCalled $socialiteWasCalled)
     {
         $socialiteWasCalled->extendSocialite(
-            'azure', __NAMESPACE__.'\Provider'
+            'msgraph', __NAMESPACE__.'\Provider'
         );
     }
 }

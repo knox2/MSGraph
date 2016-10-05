@@ -1,6 +1,6 @@
 <?php
 
-namespace SocialiteProviders\Azure;
+namespace Knox2\MSGraph;
 
 use Laravel\Socialite\Two\ProviderInterface;
 use SocialiteProviders\Manager\OAuth2\AbstractProvider;
@@ -11,21 +11,21 @@ class Provider extends AbstractProvider implements ProviderInterface
     /**
      * Unique Provider Identifier.
      */
-    const IDENTIFIER = 'AZURE';
+    const IDENTIFIER = 'MSGraph';
 
     /**
-     * The base Azure Graph URL.
+     * The base MS Graph URL.
      *
      * @var string
      */
-    protected $graphUrl = 'https://graph.windows.net/myorganization/me';
+    protected $graphUrl = 'https://graph.microsoft.com';
 
     /**
      * The Graph API version for the request.
      *
      * @var string
      */
-    protected $version = '1.5';
+    protected $version = '1.0';
 
     /**
      * {@inheritdoc}
@@ -92,7 +92,7 @@ class Provider extends AbstractProvider implements ProviderInterface
     {
         return array_merge(parent::getTokenFields($code), [
             'grant_type' => 'authorization_code',
-            'resource'   => 'https://graph.windows.net',
+            'resource'   => 'https://graph.microsoft.com',
         ]);
     }
 }
