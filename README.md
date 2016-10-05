@@ -54,7 +54,7 @@ For example:
  */
 protected $listen = [
     \SocialiteProviders\Manager\SocialiteWasCalled::class => [
-        'SocialiteProviders\MSGraph\MSGraphExtendSocialite@handle',
+        'Knox\MSGraph\MSGraphExtendSocialite@handle',
     ],
 ];
 ```
