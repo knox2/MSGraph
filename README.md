@@ -38,11 +38,14 @@ For example:
 >Add your listeners (i.e. the ones from the providers) to the SocialiteProviders\Manager\SocialiteWasCalled[] that you just created.
 
 The listener that you add for this provider is 
-```'SocialiteProviders\MSGraph\MSGraphExtendSocialite@handle'```
+```
+'SocialiteProviders\MSGraph\MSGraphExtendSocialite@handle'
+```
 
 >Note: You do not need to add anything for the built-in socialite providers unless you override them with your own providers.
 
 For example:
+
 ```
 /**
  * The event handler mappings for the application.
@@ -81,6 +84,7 @@ You do not need to add this if you add the values to the .env exactly as shown a
     'redirect' => env('MSGRAPH_REDIRECT_URI'),  
     
 ], 
+
 ```
 
 ###REFERENCE
@@ -89,7 +93,10 @@ Laravel docs on configuration
 USAGE
 
 You should now be able to use it like you would regularly use Socialite (assuming you have the facade installed):
-```return Socialite::with('msgraph')->redirect();```
+```
+return Socialite::with('msgraph')->redirect();
+
+```
 
 ####LUMEN SUPPORT
 
@@ -106,23 +113,31 @@ Note: If you are using this with Lumen, all providers will automatically be stat
 
 >to turn off stateless
 
-```return Socialite::with('msgraph')->stateless(false)->redirect();```
+```
+return Socialite::with('msgraph')->stateless(false)->redirect();
+
+```
 
 >to use stateless
 
-```return Socialite::with('msgraph')->stateless()->redirect();```
+```
+return Socialite::with('msgraph')->stateless()->redirect();
+
+```
 
 ####OVERRIDING A CONFIG
 
 If you need to override the provider’s environment or config variables dynamically anywhere in your application, you may use the following:
 
 ```
+
 $clientId = "secret";
 $clientSecret = "secret";
 $redirectUrl = "http://yourdomain.com/api/redirect";
 $additionalProviderConfig = ['site' => 'meta.stackoverflow.com'];
 $config = new \SocialiteProviders\Manager\Config($clientId, $clientSecret, $redirectUrl, $additionalProviderConfig);
 return Socialite::with('msgraph')->setConfig($config)->redirect();
+
 ```
 ####RETRIEVING THE ACCESS TOKEN RESPONSE BODY
 
@@ -134,4 +149,5 @@ You can get the access token response body, after you called the user() method i
 $user = Socialite::driver('msgraph')->user();
 
 $accessTokenResponseBody = $user->accessTokenResponseBody;
+
 ```
