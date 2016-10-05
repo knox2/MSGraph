@@ -1,5 +1,5 @@
 {
-    "name": "knox2/microsoft-graph",
+    "name": "knox/msgraph",
     "description": "Microsoft Graph Provider for Laravel Socialite",
     "license": "MIT",
     "authors": [{
@@ -12,7 +12,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Knox2\\MSGraph\\": "src/"
+            "Knox\\MSGraph\\": "src/"
         }
     }
 }

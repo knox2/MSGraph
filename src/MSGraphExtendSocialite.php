@@ -1,6 +1,6 @@
 <?php
 
-namespace Knox2\MSGraph;
+namespace Knox\MSGraph;
 
 use SocialiteProviders\Manager\SocialiteWasCalled;
 
