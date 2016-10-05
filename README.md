@@ -39,7 +39,7 @@ For example:
 
 The listener that you add for this provider is 
 ```
-'SocialiteProviders\MSGraph\MSGraphExtendSocialite@handle'
+'Knox\MSGraph\MSGraphExtendSocialite@handle'
 ```
 
 >Note: You do not need to add anything for the built-in socialite providers unless you override them with your own providers.
