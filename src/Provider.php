@@ -18,14 +18,8 @@ class Provider extends AbstractProvider implements ProviderInterface
      *
      * @var string
      */
-    protected $graphUrl = 'https://graph.microsoft.com';
+    protected $graphUrl = 'https://graph.microsoft.com/v1.0/me';
 
-    /**
-     * The Graph API version for the request.
-     *
-     * @var string
-     */
-    protected $version = '1.0';
 
     /**
      * {@inheritdoc}
@@ -62,9 +56,6 @@ class Provider extends AbstractProvider implements ProviderInterface
     protected function getUserByToken($token)
     {
         $response = $this->getHttpClient()->get($this->graphUrl, [
-            'query' => [
-                'api-version' => $this->version,
-            ],
             'headers' => [
                 'Accept'        => 'application/json',
                 'Authorization' => 'Bearer '.$token,

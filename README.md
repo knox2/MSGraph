@@ -24,7 +24,6 @@ For example:
 
 ```
 'providers' => [
-    // a whole bunch of providers
     // remove 'Laravel\Socialite\SocialiteServiceProvider',
     \SocialiteProviders\Manager\ServiceProvider::class, // add
 ];
@@ -61,7 +60,7 @@ protected $listen = [
 
 ####4. ENVIRONMENT VARIABLES
 
-If you add environment values to your .env as exactly shown below, you do not need to add an entry to the services array.
+add environment values to your .env
 
 ````
 // other values above
@@ -71,7 +70,7 @@ MSGRAPH_REDIRECT_URI=https://example.com/login
 ````
 add to config/services.php
 
-You do not need to add this if you add the values to the .env exactly as shown above. The values below are provided as a convenience in the case that a developer is not able to use the .env method
+
 
 ```
 
@@ -89,10 +88,10 @@ You do not need to add this if you add the values to the .env exactly as shown a
 
 ###REFERENCE
 
-Laravel docs on configuration
-USAGE
+####USAGE
 
 You should now be able to use it like you would regularly use Socialite (assuming you have the facade installed):
+
 ```
 return Socialite::with('msgraph')->redirect();
 
@@ -102,9 +101,9 @@ return Socialite::with('msgraph')->redirect();
 
 You can use Socialite providers with Lumen. Just make sure that you have facade support turned on and that you follow the setup directions properly.
 
-Note: If you are using this with Lumen, all providers will automatically be stateless since Lumen does not keep track of state.
+>Note: If you are using this with Lumen, all providers will automatically be stateless since Lumen does not keep track of state.
 
-Also, configs cannot be parsed from the services[] in Lumen. You can only set the values in the .env file as shown exactly in this document. If needed, you can also override a config (shown below).
+>Also, configs cannot be parsed from the services[] in Lumen. You can only set the values in the .env file as shown exactly in this document. If needed, you can also override a config (shown below).
 
 ####STATELESS
 
@@ -141,9 +140,18 @@ return Socialite::with('msgraph')->setConfig($config)->redirect();
 ```
 ####RETRIEVING THE ACCESS TOKEN RESPONSE BODY
 
-Laravel Socialite by default only allows access to the access\_token. Which can be accessed via the ```\Laravel\Socialite\User->token``` public property. Sometimes you need access to the whole response body which may contain items such as a refresh_token.
+Laravel Socialite by default only allows access to the access\_token. Which can be accessed via the
 
-You can get the access token response body, after you called the user() method in Socialite, by accessing the property ```$user->accessTokenResponseBody```
+ ```
+ \Laravel\Socialite\User->token
+ ``` 
+ 
+ public property. Sometimes you need access to the whole response body which may contain items such as a refresh_token.
+
+You can get the access token response body, after you called the user() method in Socialite, by accessing the property
+ ```
+ $user->accessTokenResponseBody
+ ```
 
 ```
 $user = Socialite::driver('msgraph')->user();
